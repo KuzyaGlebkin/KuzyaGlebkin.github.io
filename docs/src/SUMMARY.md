@@ -1,3 +1,0 @@
-# Summary
-
-- [Гайды](./guides.md)
