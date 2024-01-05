@@ -1,3 +1,3 @@
 # Гайды
 
-[Гайд по Kudzu](ya.ru)
+[Гайд по Kudzu](KudzuGuide\index.html)

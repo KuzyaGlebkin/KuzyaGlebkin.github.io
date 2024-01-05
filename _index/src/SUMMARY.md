@@ -1,4 +1,4 @@
 # Summary
 
 - [Гайды](./guides.md)
-    - [Kudzu](ya.ru)
+    - [Kudzu](KudzuGuide\index.html)
