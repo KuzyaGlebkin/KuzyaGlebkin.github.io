@@ -1,3 +1,3 @@
 # Гайды
 
-[Kudzu](docs/KudzuGuide/index.html)
+[Kudzu](https://kuzyaglebkin.github.io/KudzuGuide/index.html)
