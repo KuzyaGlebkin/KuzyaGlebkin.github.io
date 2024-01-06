@@ -2,6 +2,10 @@
 
 Хотя вы можете создавать собственные подклассы парсера (Parser), которые реализуют вашу логику синтаксического анализа, обычно лучше использовать встроенные примитивы парсера, предоставляемые Kudzu. Ниже приведен базовый пример построения парсера, который распознает либо полное слово, либо число:
 
+## Update
+
+Автор [ответил](https://github.com/copper-leaf/kudzu/issues/10#issuecomment-1878893459) по поводу ChoiceParser
+
 ```kotlin
 package com.github.KuzyaGlebkin
 
@@ -17,7 +21,7 @@ fun main() {
     val wordParser = ManyParser(LetterParser())
     val numberParser = ManyParser(DigitParser())
     // в оригинале — ChoiceParser, но я его в пакете не нашёл
-    val tokenParser = ChoiceNParser(
+    val tokenParser = ExactChoiceParser(
         wordParser,
         numberParser
     )

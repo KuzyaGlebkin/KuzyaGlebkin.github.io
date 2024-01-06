@@ -1,6 +1,6 @@
 [book]
 authors = ["Kuzya"]
-language = "en"
+language = "ru"
 multilingual = false
 src = "src"
-title = "Kudzu Guide"
+title = "Вольный перевод документации Kudzu"

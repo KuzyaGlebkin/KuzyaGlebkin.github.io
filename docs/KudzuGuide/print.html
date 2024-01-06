@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="ru" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Kudzu Guide</title>
+        <title>Вольный перевод документации Kudzu</title>
         <meta name="robots" content="noindex">
 
 
@@ -91,7 +91,9 @@
             <div class="sidebar-scrollbox">
                 <ol class="chapter"><li class="chapter-item expanded "><a href="Introduction.html"><strong aria-hidden="true">1.</strong> О чём гайд</a></li><li class="chapter-item expanded "><a href="Installation.html"><strong aria-hidden="true">2.</strong> Установка</a></li><li class="chapter-item expanded "><a href="Basic-Usage.html"><strong aria-hidden="true">3.</strong> Основное использование</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="CombineParsers.html"><strong aria-hidden="true">3.1.</strong> Объединение нескольких парсеров</a></li><li class="chapter-item expanded "><a href="Find-and-replace.html"><strong aria-hidden="true">3.2.</strong> Найти и заменить структурированные последовательности текстом</a></li><li class="chapter-item expanded "><a href="Evaluate-expressions.html"><strong aria-hidden="true">3.3.</strong> Построение и вычисление выражений с помощью пользовательских операторов</a></li></ol></li><li class="chapter-item expanded "><a href="Implementation-Details.html"><strong aria-hidden="true">4.</strong> Детали реализации</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Building-Parsers.html"><strong aria-hidden="true">4.1.</strong> Создание парсеров</a></li><li class="chapter-item expanded "><a href="Evaluating-Parse-Trees.html"><strong aria-hidden="true">4.2.</strong> Вычисление деревьев синтаксического анализа</a></li></ol></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
 
         <!-- Track and set sidebar scroll position -->
@@ -140,7 +142,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Kudzu Guide</h1>
+                    <h1 class="menu-title">Вольный перевод документации Kudzu</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -336,6 +338,8 @@ fun main() {
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="Создание-парсеров"><a class="header" href="#Создание-парсеров">Создание парсеров</a></h1>
 <p>Хотя вы можете создавать собственные подклассы парсера (Parser), которые реализуют вашу логику синтаксического анализа, обычно лучше использовать встроенные примитивы парсера, предоставляемые Kudzu. Ниже приведен базовый пример построения парсера, который распознает либо полное слово, либо число:</p>
+<h2 id="update"><a class="header" href="#update">Update</a></h2>
+<p>Автор <a href="https://github.com/copper-leaf/kudzu/issues/10#issuecomment-1878893459">ответил</a> по поводу ChoiceParser</p>
 <pre><code class="language-kotlin">package com.github.KuzyaGlebkin
 
 import com.copperleaf.kudzu.parser.ParserContext
@@ -350,7 +354,7 @@ fun main() {
     val wordParser = ManyParser(LetterParser())
     val numberParser = ManyParser(DigitParser())
     // в оригинале — ChoiceParser, но я его в пакете не нашёл
-    val tokenParser = ChoiceNParser(
+    val tokenParser = ExactChoiceParser(
         wordParser,
         numberParser
     )
@@ -463,7 +467,7 @@ fun main() {
 }
 </code></pre>
 <div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p>До этого говорилось, что Кудзу не создает абстрактное синтаксическое дерево, что тут имелось в виду спрошу у автора</p>
+<p>До этого говорилось, что Кудзу не создает абстрактное синтаксическое дерево, что тут имелось в виду спрошу у автора. <strong>Update</strong> Автор сказал, что обновит документацию в следующим релизе.</p>
 </div>
 
                     </main>
